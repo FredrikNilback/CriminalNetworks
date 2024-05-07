@@ -3,10 +3,16 @@ package Classes;
 public class Container {
 
     private Node[] network;
+    private PathFinder pathFinder;
 
     public Container(Node[] network) {
 
         this.network = network;
+        this.pathFinder = new PathFinder(network);
+    }
+
+    public void findPath(String start, String end) {
+        pathFinder.findPath(start, end);
     }
 
     public void printInfo() {

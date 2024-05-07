@@ -25,19 +25,28 @@ public class CSVLoader {
         try(BufferedReader bufferedReader = new BufferedReader(new FileReader(path))) {
             while((line = bufferedReader.readLine()) != null) {
 
-                String[] data = line.split(",");
-                nodes.add(new Node(data[0]));
+                String nodeName = line.split(",")[0];
+                nodes.add(new Node(nodeName));
             }
         } 
         catch(IOException e) {
             System.out.println("Something went wrong");
         }
 
+        line = "";
         try(BufferedReader bufferedReader = new BufferedReader(new FileReader(path))) {
+
+            int index = 0;
             while ((line = bufferedReader.readLine()) != null) {
                 
-                
-                
+                String[] data = line.split(",");
+                Node node = nodes.get(index);
+
+                for (int i = 1; i < data.length; i++) {
+                    Node neighborNode = nodes.get(StaticAlphabet.getLetterIndex(data[i]));
+                    node.addNeighbor(neighborNode);
+                }
+                index++;
             }
 
             return nodes.toArray(new Node[nodes.size()]);
@@ -47,6 +56,5 @@ public class CSVLoader {
         }
 
         return new Node[0];
-
     }
 }

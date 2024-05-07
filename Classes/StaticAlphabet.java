@@ -4,7 +4,7 @@ public class StaticAlphabet {
 
     public static int getLetterIndex(String letter) {
 
-        switch (letter.toUpperCase()) {
+        switch(letter.toUpperCase()) {
 
             case "A": return 0;
             case "B": return 1;
@@ -35,6 +35,41 @@ public class StaticAlphabet {
 
             default: return -1;
         }
+    }
+
+    public static String getLetter(int letterIndex) {
+
+        switch(letterIndex) {
+            
+            case MyLetters.A: return "A";
+            case MyLetters.B: return "B";
+            case MyLetters.C: return "C";
+            case MyLetters.D: return "D";
+            case MyLetters.E: return "E";
+            case MyLetters.F: return "F";
+            case MyLetters.G: return "G";
+            case MyLetters.H: return "H";
+            case MyLetters.I: return "I";
+            case MyLetters.J: return "J";
+            case MyLetters.K: return "K";
+            case MyLetters.L: return "L";
+            case MyLetters.M: return "M";
+            case MyLetters.N: return "N";
+            case MyLetters.O: return "O";
+            case MyLetters.P: return "P";
+            case MyLetters.Q: return "Q";
+            case MyLetters.R: return "R";
+            case MyLetters.S: return "S";
+            case MyLetters.T: return "T";
+            case MyLetters.U: return "U";
+            case MyLetters.V: return "V";
+            case MyLetters.W: return "W";
+            case MyLetters.X: return "X";
+            case MyLetters.Y: return "Y";
+            case MyLetters.Z: return "Z";
+
+            default: return "";
+        }        
     }
     
     public static class MyLetters {
