@@ -6,20 +6,21 @@ public class Node {
 
     private String name;
     private ArrayList<Node> neighbors;
-    private float weight;
+    private double betweennessCentrality;
+    private int steps;
 
     public Node(String name) {
 
         this.name = name;
         this.neighbors = new ArrayList<>();
-        this.weight = 0;
+        this.betweennessCentrality = 0;
     }
 
-    public void addWeight(float change) {
-        weight += change;
+    public void addBetweennessCentrality(double change) {
+        betweennessCentrality += change;
     }
-    public float getWeight() {
-        return weight;
+    public double getBetweennessCentrality() {
+        return betweennessCentrality;
     }
 
     public void addNeighbor(Node node) {
@@ -29,9 +30,14 @@ public class Node {
         return neighbors.toArray(new Node[neighbors.size()]);
     }
 
+    public int getSteps() {
+        return steps;
+    }
+    public void addSteps(int change) {
+        this.steps += change;
+    }
+
     public String getName() {
         return name;
-    }
-    
-    
+    }   
 }
