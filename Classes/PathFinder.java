@@ -60,6 +60,14 @@ public class PathFinder {
             ArrayList<Node> path = shortestPaths.get(i);
             if(path.contains(focusNode) && !path.get(0).equals(focusNode) && !path.get(path.size() - 1).equals(focusNode)) {
                 found = true;
+            }
+        }
+        
+        if(found) {
+            for(int i = 0; i < shortestPaths.size(); i++) {
+
+                ArrayList<Node> path = shortestPaths.get(i);
+
                 for (int j = 0; j < path.size() - 1; j++) {
 
                     if(path.get(j) == focusNode) {
@@ -71,8 +79,6 @@ public class PathFinder {
                 }
                 System.out.print(path.get(path.size() - 1).getName().toLowerCase() + "\n");
             }
-        }
-        if(found) {
             System.out.println();
         }  
     }
